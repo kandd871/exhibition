@@ -15,7 +15,6 @@ body {
     color: #7E1010;
     text-transform: uppercase;
 }
-
 .box {
     width: 640px;
     height: 740px;
@@ -37,6 +36,7 @@ button{
     color: #7E1010;
     padding: 4%;
     font-size: 1.8vh;
+    margin-top: 1vh;
 
 }
 
@@ -65,16 +65,30 @@ select {
 
 #menu {
     width: 13vw;
-    height: 38vh;
+    height: 42vh;
     position: absolute;
     border-radius: 5px;
     left: 4%;
     top: 50%; /* position at 50% from the top */
     transform: translateY(-50%); /* move it up by half of its own height */
-    padding: 1%;
+    padding-bottom: 1%;
     border: 1px dotted #7E1010;
     margin: 1%;
-    background-color: #EBE6DF;
+    text-align: center; /* center align content */
+}
+
+#title {
+    border-radius: 5px;
+    margin: 0;
+    padding: 0; /* remove padding */
+    background-color: #7E1010;
+    color: #FAF7F3;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-bottom: 1.25vh;
+    /* font-style: italic; */
+    /* padding: 1%; */
 }
 
 #info {
