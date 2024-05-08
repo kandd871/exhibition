@@ -86,9 +86,10 @@ select {
     top: 50%; /* position at 50% from the top */
     transform: translateY(-50%); /* move it up by half of its own height */
     padding: 1%;
-    border: 1px dotted #7E1010;
+    border: 1px dotted #FAF7F3;
+    color: #FAF7F3;
     margin: 1%;
-    background-color: #EBE6DF;
+    /* background-color: #EBE6DF; */
 }
 
 p{

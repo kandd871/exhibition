@@ -18,13 +18,12 @@ const firestore = getFirestore();
 const symbolsCollection = collection(firestore, 'symbols');
 let lastIndex = '';
 
-let positionsX = [425, 432, 444, 458
+let positionsX = [425, 432, 444, 458, 482, 493, 502 
 ];
-let positionsY = [76, 76, 76, 76
+let positionsY = [76, 76, 76, 76, 76, 76, 76
 ];
 
-let fontSizes = [ 20, 23, 18, 22
-
+let fontSizes = [ 20, 23, 20, 22, 19, 23, 18
 ]
 let symbolsData = [];
 
@@ -189,6 +188,7 @@ const sketch = (p) => {
             <p> ${data.color}</p>
             <p>${data.symbol}</p>
         `;
+        infoDiv.style.backgroundColor = data.color;
     }
     
     
