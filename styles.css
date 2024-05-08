@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "Bodoni 72";
+    font-family: "PP Editorial New";
     src:
-      local("Bodoni 72"),
-      url("Bodoni72C.ttf") format("truetype")
+      local("PP Editorial New"),
+      url("PPEditorialNew-Regular.otf") format("opentype")
   }
 
 body {
@@ -11,7 +11,7 @@ body {
     height: 100vh;
     display: flex;
     background-color: #FAF7F3;
-    font-family: 'Bodoni 72', serif;
+    font-family: 'PP Editorial New', serif;
     color: #7E1010;
     text-transform: uppercase;
 }
@@ -30,7 +30,7 @@ body {
 }
 
 button{
-    font-family: 'Bodoni 72', serif;
+    font-family: 'PP Editorial New', serif;
     background-color: transparent; 
     border: 1px dotted #7E1010;
     color: #7E1010;
@@ -64,8 +64,8 @@ select {
 }
 
 #menu {
-    width: 13vw;
-    height: 42vh;
+    width: 16vw;
+    height: 44.5vh;
     position: absolute;
     border-radius: 5px;
     left: 4%;
@@ -74,6 +74,7 @@ select {
     padding-bottom: 1%;
     border: 1px dotted #7E1010;
     margin: 1%;
+    background-color: #EBE6DF;
     text-align: center; /* center align content */
 }
 
@@ -86,7 +87,7 @@ select {
     width: 100%;
     padding-top: 5%;
     padding-bottom: 5%;
-    margin-bottom: 1.25vh;
+    margin-bottom: 1.8vh;
     /* font-style: italic; */
     /* padding: 1%; */
 }
@@ -100,9 +101,11 @@ select {
     top: 50%; /* position at 50% from the top */
     transform: translateY(-50%); /* move it up by half of its own height */
     padding: 1%;
+    padding-top: 1.22%;
     border: 1px dotted #FAF7F3;
     color: #FAF7F3;
-    margin: 1%;
+    margin:1%;
+    text-align: center;
     /* background-color: #EBE6DF; */
 }
 
