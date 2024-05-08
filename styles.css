@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "OT Miniature";
+    font-family: "Bodoni 72";
     src:
-      local("OT Miniature"),
-      url("OTMiniature-Regular.otf") format("opentype")
+      local("Bodoni 72"),
+      url("Bodoni72C.ttf") format("truetype")
   }
 
 body {
@@ -11,7 +11,7 @@ body {
     height: 100vh;
     display: flex;
     background-color: #FAF7F3;
-    font-family: 'OT Miniature', serif;
+    font-family: 'Bodoni 72', serif;
     color: #7E1010;
     text-transform: uppercase;
 }
@@ -31,7 +31,7 @@ body {
 }
 
 button{
-    font-family: 'OT Miniature', serif;
+    font-family: 'Bodoni 72', serif;
     background-color: transparent; 
     border: 1px dotted #7E1010;
     color: #7E1010;
