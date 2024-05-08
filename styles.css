@@ -96,6 +96,13 @@ p{
     line-height: .6;
 }
 
+.symbolsize{
+    font-size: 5vh;
+    font-weight: bold;
+    margin-top: -.15vh;
+    margin-bottom: -.2vh;
+}
+
 #p5-container {
     width: 100vw;
     height: 100vh;
@@ -107,3 +114,4 @@ p{
 canvas {
     display: block;
 }
+

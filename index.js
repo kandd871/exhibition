@@ -18,12 +18,12 @@ const firestore = getFirestore();
 const symbolsCollection = collection(firestore, 'symbols');
 let lastIndex = '';
 
-let positionsX = [425, 432, 444, 458, 482, 493, 502 
+let positionsX = [425, 433, 444, 458, 482, 493, 502, 532, 541, 550, 563 
 ];
-let positionsY = [76, 76, 76, 76, 76, 76, 76
+let positionsY = [76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76
 ];
 
-let fontSizes = [ 20, 23, 20, 22, 19, 23, 18
+let fontSizes = [ 20, 23, 20, 22, 19, 23, 18, 21, 25, 24, 20
 ]
 let symbolsData = [];
 
@@ -167,7 +167,7 @@ const sketch = (p) => {
     function checkHover() {
         for (let i = 0; i < symbolsData.length; i++) {
             const data = symbolsData[i];
-            const buffer = 5; // Adjust buffer size as needed
+            const buffer = 0; // Adjust buffer size as needed
             const distance = p.dist(p.mouseX, p.mouseY, data.position.x, data.position.y);
             const hoverSize = data.fontSize / 2 + buffer; // Increase hover size with buffer
             if (distance < hoverSize) {
@@ -184,9 +184,9 @@ const sketch = (p) => {
         // Update the #info div with the corresponding data
         const infoDiv = document.getElementById('info');
         infoDiv.innerHTML = `
+            <p class="symbolsize">${data.symbol}</p>
             <p>${data.name}, ${data.age}</p>
             <p> ${data.color}</p>
-            <p>${data.symbol}</p>
         `;
         infoDiv.style.backgroundColor = data.color;
     }
