@@ -94,8 +94,7 @@ select {
     position: absolute;
     border-radius: 5px;
     left: 1115px;
-    top: 47%; /* position at 50% from the top */
-    transform: translateY(-50%); /* move it up by half of its own height */
+    top: 320px; /* position at 50% from the top */
     padding: 2px;
     border: 1px dotted #FAF7F3;
     color: #FAF7F3;
