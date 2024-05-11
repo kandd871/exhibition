@@ -17,23 +17,54 @@
       <label for="name">NAME</label><Br>
       <input type="text" id="name" name="fname"><br><br>
     </div>
-    <div class="age">
+    <!-- <div class="age">
       <label for="age">AGE</label><Br>
       <input type="number" id="age" name="age" min="0"><br><br>
-    </div>
-    <div class="color">
+    </div> -->
+    <!-- <div class="color">
       <label for="color">COLOR</label><br>
       <input type="color" id="color" name="head" value="#EE3333" /><br><br>
-     </div>
-      <div class="symbol">
-      <label for="symbol">SYMBOL</label> <br>
-      <select id="symbol" name="symbol"> 
-        <option value="+">+</option> 
-        <option value="≡">≡</option> 
-        <option value="×">×</option> 
-        <option value="=">=</option> 
+     </div> -->
+     <div class="age">
+      <label for="age">AGE</label> <br>
+      <select id="age" name="age"> 
+        <option value="19">BELOW 13</option> 
+        <option value="20">13 T0 18</option> 
+        <option value="21"> 19 TO 30 </option> 
+        <option value="22"> 31 TO 45 </option> 
+        <option value="23"> 46 TO 60 </option> 
+        <option value="24">ABOVE 60</option> 
       </select><br><br>
       </div>
+            
+      <div class="color">
+        <label for="color">WHICH CONTINENT ARE YOU FROM?</label> <br>
+        <select id="color" name="color"> 
+          <option value="#72C8F8"> NORTH AMERICA </option> 
+          <option value="#EE3333"> SOUTH AMERICA</option> 
+          <option value="#FF8E3D"> ASIA </option> 
+          <option value="#BD48C7"> EUROPE </option> 
+          <option value="#0A7F55"> AFRICA </option> 
+          <option value="#ABD551"> AUSTRALIA </option> 
+          <option value="#6A3F3F"> ANTARCTICA </option> 
+        </select><br><br>
+        </div>
+
+      <div class="location">
+        <label for="location">WHAT CITY ARE YOU FROM?</label><Br>
+        <input type="text" id="location" name="location"><br><br>
+      </div>
+
+      <div class="symbol">
+        <label for="symbol">WHAT TYPE OF PERSON ARE YOU?</label> <br>
+        <select id="symbol" name="symbol"> 
+          <option value="≡">THE EXPRESSIVE</option> 
+          <option value="=">THE AMIABLE</option> 
+          <option value="×">THE DRIVER</option> 
+          <option value="+">THE ANALYTICAL</option> 
+        </select><br><br>
+        </div>
+
       <div class="add"><button id="add">ADD</button></div>
     </div>
     <div id="p5-container"></div>

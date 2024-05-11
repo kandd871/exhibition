@@ -18,21 +18,120 @@ const firestore = getFirestore();
 const symbolsCollection = collection(firestore, 'symbols');
 let lastIndex = '';
 
-let positionsX = [425, 433, 444, 458, 482, 493, 502, 532, 541, 550, 563 
-];
-let positionsY = [76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76
+let positionsX = 
+[425, 433, 444, 458, 482, 493, 502, 532, 541, 550, 563, 578, 590, 664, 729, 743, 755, 781, 793, 856, 863, 876, 937, 947, 983, 995,
+433, 458, 475, 496, 552, 588, 658, 673, 748, 788, 869, 942, 956, 990,
+437, 464, 493, 552, 578, 652, 676, 750, 782, 869, 942, 962, 990,
+440, 466, 488, 549, 563, 577, 650, 658, 666, 678, 753, 778, 869, 942, 972, 990,
+447, 484, 552, 594, 645, 682, 757, 771, 869, 942, 982, 990,
+451, 480, 538, 550, 563, 578, 594, 637, 648, 676, 685, 694, 763, 856, 863, 876, 941, 949, 956, 989, 
+
+461, 489, 663, 734, 746, 760, 861, 934, 947, 959, 972, 986,
+450, 475, 489, 658, 670, 750, 776, 847, 876, 933, 957, 986, 
+440, 652, 674, 750, 785, 840, 934, 957, 986,
+438, 648, 678, 750, 758, 768, 779, 847, 860, 957,
+442, 470, 480, 496, 644, 663, 680, 750, 783, 878, 957,
+446, 487, 642, 683, 750, 786, 840, 879, 957,
+452, 462, 475, 633, 643, 653, 673, 686, 692, 738, 748, 753, 762, 774, 851, 865, 943, 959, 972,
+
+440, 450, 466, 479, 563, 656, 667, 736, 744, 759, 774, 791, 855, 864, 878, 966,
+448, 482, 557, 568, 641, 687, 734, 763, 792, 865, 946, 978,
+448, 462, 472, 550, 574, 633, 686, 763, 864, 938, 987,
+448, 479, 545, 562, 577, 632, 763, 864, 936, 988,
+448, 480, 541, 580, 637, 763, 864, 940, 986, 
+440, 450, 462, 482, 491, 534, 548, 574, 580, 590, 653, 663, 678, 750, 763, 777, 852, 864, 871, 955, 963, 972,
+
+432, 444, 472, 483, 492, 649, 662, 674, 740, 754, 778, 788, 966,
+444, 452, 483, 662, 749, 759, 785, 960, 972,
+444, 464, 483, 662, 749, 769, 785, 957, 975,
+444, 473, 483, 662, 749, 785, 952, 967, 978,
+444, 483, 662, 749, 785, 944, 984,
+436, 443, 452, 483, 649, 662, 673, 741, 755, 786, 936, 948, 953, 978, 985, 995,
+
+431, 443, 453, 480, 492, 555, 568, 583, 649, 662, 674, 735, 746, 758, 770, 786, 835, 845, 853, 880, 890, 940, 952, 964, 976, 988,
+442, 453, 487, 545, 584, 663, 746, 785, 845, 856, 889, 940, 964, 988,
+442, 463, 487, 538, 663, 746, 770, 845, 860, 889, 964, 
+442, 473, 487, 537, 663, 746, 754, 760, 769, 845, 873, 889, 964, 
+442, 487, 540, 586, 663, 746, 781, 845, 889, 964,
+431, 442, 454, 487, 555, 565, 580, 650, 663, 674, 735, 746, 758, 770, 781, 835, 844, 890, 951, 964, 976,
+
+445, 459, 632, 642, 689, 698, 758, 767, 840, 853, 866, 872, 937, 949, 963, 973, 984,
+441, 473, 636, 647, 687, 692, 743, 784, 847, 883, 944, 984, 
+447, 466, 636, 652, 676, 692, 738, 789, 846, 891, 944,
+456, 478, 490, 636, 658, 672, 692, 737, 790, 846, 893, 944, 956, 968,
+443, 477, 969,
+433, 467, 636, 664, 692, 744, 783, 846, 887, 944, 988,
+449, 459, 480, 628, 635, 642, 664, 683, 692, 699, 762, 770, 838, 848, 866, 874, 937, 950, 963, 974, 988,
+
+431, 444, 454, 469, 532, 547, 580, 592, 762, 839, 847, 859, 869, 934, 947, 959, 972, 986,
+444, 479, 540, 558, 588, 756, 770, 848, 887, 934, 961, 985,
+444, 455, 470, 540, 565, 588, 752, 774, 848, 862, 869, 876, 960,
+444, 477, 540, 579, 588, 747, 763, 780, 848, 881, 960,
+433, 442, 452, 480, 490, 532, 540, 550, 588, 736, 747, 769, 779, 790, 839, 847, 855, 879, 889, 949, 959, 968,
+
 ];
 
-let fontSizes = [ 20, 23, 20, 22, 19, 23, 18, 21, 25, 24, 20
-]
+let positionsY = 
+[76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76, 76,
+90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90,
+102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102, 102,
+117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117, 117,
+131, 131, 131, 131, 131, 131, 131, 131, 131, 131, 131, 131,
+145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145, 145,
+
+176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176, 176,
+185, 185, 185, 185, 185, 185, 185, 185, 185, 185, 185, 185,
+198, 198, 198, 198, 198, 198, 198, 198, 198,
+211, 211, 211, 211, 211, 211, 211, 211, 211, 211,  
+223, 223, 223, 223, 223, 223, 223, 223, 223, 223, 223,
+234, 234, 234, 234, 234, 234, 234, 234, 234,
+243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243, 243,
+
+276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276, 276,
+290, 290, 290, 290, 290, 290, 290, 290, 290, 290, 290, 290,
+305, 305, 305, 305, 305, 305, 305, 305, 305, 305, 305,
+316, 316, 316, 316, 316, 316, 316, 316, 316, 316,
+328, 328, 328, 328, 328, 328, 328, 328, 328,
+340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340, 340,
+
+378, 378, 378, 378, 378, 378, 378, 378, 378, 378, 378, 378, 378,
+390, 390, 390, 390, 390, 390, 390, 390, 390, 
+404, 404, 404, 404, 404, 404, 404, 404, 404,
+416, 416, 416, 416, 416, 416, 416, 416, 416,
+431, 431, 431, 431, 431, 431, 431,
+443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443, 443,
+
+477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477, 477,
+489, 489, 489, 489, 489, 489, 489, 489, 489, 489, 489, 489, 489, 489, 
+502, 502, 502, 502, 502, 502, 502, 502, 502, 502, 502,
+514, 514, 514, 514, 514, 514, 514, 514, 514, 514, 514, 514, 514, 
+528, 528, 528, 528, 528, 528, 528, 528, 528, 528,
+543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543, 543,
+
+578, 578,  578, 578, 578, 578, 578, 578, 578, 578, 578, 578, 578, 578,  578, 578, 578, 
+590, 590, 590, 590, 590, 590, 590, 590, 590, 590, 590, 590,
+601, 601, 601, 601, 601, 601, 601, 601, 601, 601, 601,
+612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612, 612,
+619, 619, 619,
+632, 632, 632, 632, 632, 632, 632, 632, 632, 632, 632,
+645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645, 645,    
+
+679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679, 679,
+694, 694, 694, 694, 694, 694, 694, 694, 694, 694, 694, 694,
+710, 710, 710, 710, 710, 710, 710, 710, 710, 710, 710, 710, 710,
+726, 726, 726, 726, 726, 726, 726, 726, 726, 726, 726, 
+743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743, 743,         
+
+];
+
 let symbolsData = [];
 
 
-async function addANewDocument(symbol, color, position, fontSize, name, age) {
+async function addANewDocument(symbol, color, position, name, age, location, selectedText) {
     try {
         const { x, y } = position;
         // Add symbol, color, position, and name to Firestore
-        const newSymbolRef = await addDoc(symbolsCollection, { symbol, color, position: { x, y }, fontSize, name, age });
+        const newSymbolRef = await addDoc(symbolsCollection, { symbol, color, position: { x, y }, name, age, location, selectedText });
         console.log(`Document with ID ${newSymbolRef.id} added successfully.`);
     } catch (error) {
         console.error('Error adding document: ', error);
@@ -40,29 +139,28 @@ async function addANewDocument(symbol, color, position, fontSize, name, age) {
 }
 
 document.getElementById('add').addEventListener('click', async () => {
+    const symbolElement = document.getElementById('symbol');
     const symbol = document.getElementById('symbol').value;
     const color = document.getElementById('color').value;
     const name = document.getElementById('name').value;
-    const age = document.getElementById('age').value;
+    const location = document.getElementById('location').value;
+    const age = parseInt(document.getElementById('age').value);
 
+    const selectedOption = symbolElement.options[symbolElement.selectedIndex];
+    const selectedText = selectedOption.textContent;
 
     const positionIndex = lastIndex % positionsX.length;
         const x = positionsX[positionIndex];
         const y = positionsY[positionIndex];
-        const fontSize = fontSizes[positionIndex];
+        // const fontSize = fontSizes[positionIndex];
 
-    if (name === '' || age === '' || color === '' || symbol === '') {
+    if (name === '' || color === '' || symbol === '' || age === '' || location === '') {
         // Display an error message or provide feedback to the user
         alert('Please fill in all fields before adding.');
     } else {
         // If all fields are filled, proceed with adding the document
-        await addANewDocument(symbol, color, { x, y }, fontSize, name, age);
+        await addANewDocument(symbol, color, { x, y }, name, age, location, selectedText);
     }
-    // if (x !== null && y !== null) {
-    //     await addANewDocument(symbol, color, { x, y }, fontSize, name, age); // Pass the name value to addANewDocument
-    // } else {
-    //     console.error('No more positions available.');
-    // }
 });
 
 async function listenToADocument(symbolsCollection, symbolsData) {
@@ -100,7 +198,7 @@ const sketch = (p) => {
     let btn;
 
     p.setup = function() {
-        p.createCanvas(p.windowWidth, p.windowHeight); // Make canvas size of window
+        p.createCanvas(1440, 813); // Make canvas size of window
         p.fill(0);
         p.rectMode(p.CENTER);
         rectX = p.width / 2; // Set rectX to the center of the canvas
@@ -110,57 +208,28 @@ const sketch = (p) => {
         p.rectMode(p.CENTER);
         p.rect(rectX, rectY, rectWidth, rectHeight);
         add(rectX, rectY);
-        addNewSymbols(); 
-        // displayExistingSymbols();
         btn = p.select('#add');
         btn.mousePressed(function() {
             addNewSymbols(); 
-            // displayNewSymbols();
         });
     };
     
 
     p.draw = function() {
-        // You can add drawing logic here if needed
-        // p.background('#FAF7F3');
         p.noFill();
         p.strokeWeight(3);
         addNewSymbols() ;
-        // displayNewSymbols(); 
         checkHover();
     };
     function addNewSymbols() {
-        // If all input fields are filled, proceed to display symbols
         for (let i = 0; i < symbolsData.length; i++) {
             const data = symbolsData[i];
-            p.textSize(data.fontSize); 
+            p.textSize(data.age); 
             p.fill(data.color);
             p.noStroke();
             p.text(data.symbol, data.position.x, data.position.y);
         }
     }
-    
-
-    // function displayExistingSymbols() {
-    //     for (let i = 0; i < symbolsData.length; i++) {
-    //         const data = symbolsData[i];
-    //         p.textSize(data.fontSize); 
-    //         p.fill(data.color);
-    //         p.noStroke();
-    //         p.text(data.symbol, data.position.x, data.position.y);
-    //     }
-    // }
-    
-    // function displayNewSymbols() {
-    //     for (let i = lastIndex; i < symbolsData.length; i++) {
-    //         const data = symbolsData[i];
-    //         p.textSize(data.fontSize); 
-    //         p.fill(data.color);
-    //         p.noStroke();
-    //         p.text(data.symbol, data.position.x, data.position.y);
-    //     }
-    // }
-
 
         let hoveredSymbol = null;
 
@@ -169,7 +238,7 @@ const sketch = (p) => {
             const data = symbolsData[i];
             const buffer = 0; // Adjust buffer size as needed
             const distance = p.dist(p.mouseX, p.mouseY, data.position.x, data.position.y);
-            const hoverSize = data.fontSize / 2 + buffer; // Increase hover size with buffer
+            const hoverSize = data.age / 2 + buffer; // Increase hover size with buffer
             if (distance < hoverSize) {
                 hoveredSymbol = data;
                 displaySymbolInfo(hoveredSymbol);
@@ -184,11 +253,10 @@ const sketch = (p) => {
         // Update the #info div with the corresponding data
         const infoDiv = document.getElementById('info');
         infoDiv.innerHTML = `
-            <p class="symbolsize">${data.symbol}</p>
-            <p>${data.name}, ${data.age}</p>
-            <p> ${data.color}</p>
+            <p class="symbolsize">This weave was added by <br> ${data.name}, ${data.selectedText} ${data.age}<br> from ${data.location}</p>
         `;
-        infoDiv.style.backgroundColor = data.color;
+        infoDiv.style.color = data.color;
+        infoDiv.style.border = `1px dotted ${data.color}`;
     }
     
     

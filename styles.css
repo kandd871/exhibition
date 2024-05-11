@@ -8,26 +8,11 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    display: flex;
     background-color: #FAF7F3;
     font-family: 'PP Editorial New', serif;
     color: #EE3333;
     text-transform: uppercase;
     letter-spacing: .2px;
-}
-.box {
-    width: 640px;
-    height: 740px;
-    border: 1px dotted #EE3333;
-    display: flex;
-    justify-content: center; /* horizontally center */
-    align-items: center; /* vertically center */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 5px;
 }
 
 button{
@@ -35,9 +20,9 @@ button{
     background-color: transparent; 
     border: 1px dotted #EE3333;
     color: #EE3333;
-    padding: 4%;
-    font-size: 1.8vh;
-    margin-top: 1vh;
+    padding: 8px;
+    font-size: 20px;
+    margin-top: 6px;
 
 }
 
@@ -50,20 +35,13 @@ button:hover{
 input {
     background-color: transparent; 
     border: 1px dotted #EE3333;
+    margin-top: 5px;
+    margin-bottom: -1px;
+    height: 28px;
     text-transform: uppercase;
-}
-
-input[type="color"] {
-	-webkit-appearance: none;
-	border: none;
-	width: 25px;
-	height: 25px;
-}
-input[type="color"]::-webkit-color-swatch-wrapper {
-	padding: 0;
-}
-input[type="color"]::-webkit-color-swatch {
-	border: none;
+    font-family: 'PP Editorial New', serif;
+    text-align: center;
+    color:#EE3333;
 }
 
 select {
@@ -71,90 +49,101 @@ select {
     color: #EE3333;
     cursor: pointer;
     border: 1px dotted #EE3333;
-}
-
-#age{
-    width: 40px;
+    font-family: 'PP Editorial New', serif;
+    padding: 8px;
+    margin-top: 6px;
+    margin-bottom: 5px;
 }
 
 #menu {
-    width: 16vw;
-    height: 45.75vh;
+    width: 320px;
+    line-height: 20px;
+    height: 530px;
     position: absolute;
     border-radius: 5px;
-    left: 4%;
-    top: 50%; /* position at 50% from the top */
-    transform: translateY(-50%); /* move it up by half of its own height */
-    padding-bottom: 1%;
+    left:35px;
+    top: 150px; 
+    padding-bottom: 19px;
+    padding-top: 0;
     border: 1px dotted #EE3333;
-    margin: 1%;
     background-color: #EBE6DF;
-    text-align: center; /* center align content */
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+    z-index: 10;
 }
 
 #title {
     border-radius: 2px;
+    width: 320px;
     margin: 0;
     padding: 0; /* remove padding */
     background-color: #EE3333;
     color: #FAF7F3;
-    width: 100%;
-    font-size: 2.5vh;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    margin-bottom: 2vh;
-    /* font-style: italic; */
-    /* padding: 1%; */
+    justify-content: center;
+    display: block;
+    font-size: 20px;
+    padding-top: 18px;
+    padding-bottom: 13px;
+    margin-bottom: 18px;
 }
 
 #info {
-    width: 8vw;
-    height: 11vh;
+    width:260px;
+    height: 85px;
     position: absolute;
     border-radius: 5px;
-    right: 7%;
-    top: 50%; /* position at 50% from the top */
+    left: 1115px;
+    top: 47%; /* position at 50% from the top */
     transform: translateY(-50%); /* move it up by half of its own height */
-    padding: 1%;
-    padding-top: 1.22%;
+    padding: 2px;
     border: 1px dotted #FAF7F3;
     color: #FAF7F3;
-    margin:1%;
     text-align: center;
-    /* border: 1px dotted #EE3333; */
-    /* background-color: #EBE6DF; */
+    font-size: 15px;
 }
 
-p{
+/* p{
     line-height: .6;
-}
-
-.symbolsize{
-    font-size: 5vh;
-    font-weight: bold;
-    margin-top: -.15vh;
-    margin-bottom: -.2vh;
-}
+} */
 
 #p5-container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* horizontally center */
-    align-items: center; /* vertically center */
+    width: 600px;
+    height: 700px;
+    display: block;
+    position: absolute;
+    /* top:50px;
+    left:422px; */
 }
 
-canvas {
+.box {
+    width: 640px;
+    height: 740px;
+    border: 1px dotted #EE3333;
+    position: absolute;
+    top:27px;
+    left:402px;
+    border-radius: 5px;
     display: block;
+}
+
+
+canvas {
+    width: 600px;
+    height: 700px;
+    display: block;
+    position: absolute;
+    /* top:50px;
+    left:422px; */
 }
 
 #logo{
     position:absolute;
-    top:18%;
-    left: 11.5%;
+    top: 90px;
+    left: 180px;
 }
 
 #logo>img{
-    width: 50px;
+    width: 43px;
     height: auto;
 }
