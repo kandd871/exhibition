@@ -146,3 +146,58 @@ canvas {
     width: 43px;
     height: auto;
 }
+
+
+@media only screen and (max-height: 800px){
+    canvas, .box{
+        transform: scale(.9);
+    }
+    canvas, .box, #menu, #info, #logo{
+        margin-top: -5vh;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    canvas, .box, .intro{
+        transform: scale(.8);
+    }
+    canvas, .box {
+        transform: translate(-100px, 0) scale(0.8);
+    }
+    #info{
+        left: 900px;
+        transform: scale(.8);
+    }
+    .intro{
+        position: absolute;
+        top: 40px;
+        left: 30px;
+    }
+    canvas, .box, #menu, #info, #logo{
+        margin-top: -12vh;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    canvas, .box, .intro{
+        transform: scale(.8);
+    }
+
+    canvas, .box {
+        transform: translate(-100px, 0) scale(0.8);
+    }
+    #info{
+        left: 880px;
+        transform: scale(.8);
+    }
+    .intro{
+        position: absolute;
+        top: 40px;
+        left: 30px;
+    }
+    canvas, .box, #menu, #info, #logo{
+        margin-top: -2vh!important;
+    }
+}
+
+
