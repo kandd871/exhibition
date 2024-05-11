@@ -208,28 +208,53 @@ const sketch = (p) => {
         p.rectMode(p.CENTER);
         p.rect(rectX, rectY, rectWidth, rectHeight);
         add(rectX, rectY);
-        btn = p.select('#add');
-        btn.mousePressed(function() {
-            addNewSymbols(); 
-        });
     };
     
 
+    
     p.draw = function() {
         p.noFill();
         p.strokeWeight(3);
-        addNewSymbols() ;
+        addSymbols();
+        btn = p.select('#add');
+        btn.mousePressed(function() {
+            addSymbols(); 
+        });
         checkHover();
     };
-    function addNewSymbols() {
-        for (let i = 0; i < symbolsData.length; i++) {
-            const data = symbolsData[i];
-            p.textSize(data.age); 
-            p.fill(data.color);
-            p.noStroke();
-            p.text(data.symbol, data.position.x, data.position.y);
-        }
+    
+    function addSymbols(){
+            for (let i = 0; i < symbolsData.length; i++) {
+                const data = symbolsData[i];
+                p.textSize(data.age); 
+                p.fill(data.color);
+                p.noStroke();
+                p.text(data.symbol, data.position.x, data.position.y);
+            }
+
     }
+
+    // function addNewSymbols() {
+    //     const animationDuration = 1; // Duration of the animation in seconds
+    //     const framesPerSecond = 60; // Number of frames per second
+    //     const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
+    
+    //     const latestSymbolIndex = symbolsData.length-1; // Index of the newest symbol
+    //     if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
+    //         const data = symbolsData[latestSymbolIndex];
+    //         const targetX = data.position.x; // The final x position
+    //         const initialX = -300; // Start with x position at 0
+    
+    //         // Calculate the interpolated x position based on frameCount
+    //         const interpolatedX = p.lerp(initialX, targetX, p.min(1, p.frameCount / totalFrames));
+    
+    //         p.textSize(data.age); 
+    //         p.fill(data.color);
+    //         p.noStroke();
+    //         p.text(data.symbol, interpolatedX, data.position.y);
+    //     }
+    // }
+    
 
         let hoveredSymbol = null;
 
@@ -253,7 +278,7 @@ const sketch = (p) => {
         // Update the #info div with the corresponding data
         const infoDiv = document.getElementById('info');
         infoDiv.innerHTML = `
-            <p class="symbolsize">This weave was added by <br> ${data.name}, ${data.selectedText} ${data.age}<br> from ${data.location}</p>
+            <p class="symbolsize">This weave was added by <br> ${data.name} (${data.selectedText})<br> from ${data.location}</p>
         `;
         infoDiv.style.color = data.color;
         infoDiv.style.border = `1px dotted ${data.color}`;
