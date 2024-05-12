@@ -208,6 +208,11 @@ const sketch = (p) => {
         p.rectMode(p.CENTER);
         p.rect(rectX, rectY, rectWidth, rectHeight);
         add(rectX, rectY);
+        addSymbols();
+        btn = p.select('#add');
+        btn.mousePressed(function() {
+            addSymbols(); 
+        });
     };
     
 
@@ -216,10 +221,6 @@ const sketch = (p) => {
         p.noFill();
         p.strokeWeight(3);
         addSymbols();
-        btn = p.select('#add');
-        btn.mousePressed(function() {
-            addSymbols(); 
-        });
         checkHover();
     };
     
@@ -228,7 +229,8 @@ const sketch = (p) => {
                 const data = symbolsData[i];
                 p.textSize(data.age); 
                 p.fill(data.color);
-                p.noStroke();
+                p.strokeWeight(1);      
+                p.stroke(data.color);
                 p.text(data.symbol, data.position.x, data.position.y);
             }
 

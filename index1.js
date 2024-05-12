@@ -157,6 +157,9 @@ let fontSizes =
 
 ]
 
+let colors = ['#72C8F8', "#EE3333", "#FF8E3D", "#BD48C7", "#0A7F55", "#ABD551", "#6A3F3F"];
+let symbols = ['+', '×', '≡', '=']
+
 // Define p5 sketch in instance mode
 const sketch = (p) => {
     let rectWidth = 600;
@@ -175,8 +178,10 @@ const sketch = (p) => {
         p.noStroke();
         p.rectMode(p.CENTER);
         p.rect(rectX, rectY, rectWidth, rectHeight);
-        add(rectX, rectY);
-        addNewSymbols(); 
+        // add(rectX, rectY);
+        addNewSymbols();
+        addNewSymbols();
+
     };
     
 
@@ -185,17 +190,18 @@ const sketch = (p) => {
         // p.background('#FAF7F3');
         p.noFill();
         p.strokeWeight(3);
-        addNewSymbols() ;
     };
 
     function addNewSymbols() {
         // If all input fields are filled, proceed to display symbols
         for (let i = 0; i < fontSizes.length; i++) {
+            let color = p.random(colors);
+            let symbol = p.random(symbols);
             p.textSize(fontSizes[i]); 
-            p.fill('#000000');       
-            p.stroke('#000000');
-            p.strokeWeight(0.35);
-            p.text("+", positionsX[i], positionsY[i]);
+            p.fill(color); 
+            p.strokeWeight(1);      
+            p.stroke(color);
+            p.text(symbol, positionsX[i], positionsY[i]);
         }
     }
     function add(x,y) {
