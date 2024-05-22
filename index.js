@@ -209,23 +209,25 @@ const sketch = (p) => {
         p.rectMode(p.CENTER);
         p.rect(rectX, rectY, rectWidth, rectHeight);
         add(rectX, rectY);
-        addSymbols();
+        if (startFrame < 0) { // Only call addNewSymbols if an animation has started
+            addSymbols();
+        }
         btn = p.select('#add');
         btn.mousePressed(function() {
-            setTimeout(addSymbols, 2000);
+            p.clear();
             startNewSymbolAnimation();
             if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
                 addNewSymbols();
-              }
+              };
         });
     };
-
-
     
     p.draw = function() {
         p.noFill();
         p.noStroke();
-        addSymbols();
+        if (startFrame < 0) { // Only call addNewSymbols if an animation has started
+            addSymbols();
+        }
             if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
                 addNewSymbols();
             }
@@ -244,7 +246,7 @@ const sketch = (p) => {
     }
 
     function addNewSymbols() {
-        const animationDuration = 2; // Duration of the animation in seconds
+        const animationDuration = 3; // Duration of the animation in seconds
         const framesPerSecond = 60; // Number of frames per second
         const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
 
@@ -252,13 +254,12 @@ const sketch = (p) => {
         if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
             const data = symbolsData[latestSymbolIndex];
             const targetX = data.position.x; // The final x position
-            const initialX = -300; // Start with x position at -300
+            const initialX = -220; // Start with x position at -300
 
             let currentFrame = p.frameCount - startFrame;
             if (currentFrame <= totalFrames) {
                 // Calculate the interpolated x position based on frameCount
                 const interpolatedX = p.lerp(initialX, targetX, p.min(1, currentFrame / totalFrames));
-                // p.clear();
                 p.textSize(data.age);
                 p.fill(data.color);
                 p.noStroke();
@@ -267,6 +268,27 @@ const sketch = (p) => {
                 // Clear the symbol after animation duration
                 startFrame = -1; // Reset startFrame to indicate no ongoing animation
             }
+        }
+    }
+
+    function addRect(){
+        const animationDuration = 3; // Duration of the animation in seconds
+        const framesPerSecond = 60; // Number of frames per second
+        const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
+        let currentFrame = p.frameCount - startFrame;
+        if (currentFrame <= totalFrames) {
+            p.fill("#FAF7F3");
+            p.rectMode(p.CENTER);
+            rectX = p.width / 2; // Set rectX to the center of the canvas
+            rectY = p.height / 2; // Set rectY to the center of the canvas
+            p.rectMode(p.CENTER);
+            p.rect(rectX, rectY, 610, 730);
+            p.noFill();
+            p.noStroke();
+                
+            } else {
+            // Clear the symbol after animation duration
+            startFrame = -1; // Reset startFrame to indicate no ongoing animation
         }
     }
     

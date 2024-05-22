@@ -88,6 +88,10 @@ select {
     margin-bottom: 18px;
 }
 
+.intro, #info{
+    transition: .25s;
+}
+
 #info {
     width:260px;
     height: 85px;
@@ -124,6 +128,7 @@ select {
     left:402px;
     border-radius: 5px;
     display: block;
+    z-index: 100;
 }
 
 
