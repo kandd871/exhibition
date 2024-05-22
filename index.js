@@ -196,6 +196,7 @@ const sketch = (p) => {
     let rectX;
     let rectY;
     let btn;
+    let startFrame = -1; 
 
     p.setup = function() {
         p.createCanvas(1440, 813); // Make canvas size of window
@@ -211,16 +212,23 @@ const sketch = (p) => {
         addSymbols();
         btn = p.select('#add');
         btn.mousePressed(function() {
-            addSymbols(); 
+            setTimeout(addSymbols, 2000);
+            startNewSymbolAnimation();
+            if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
+                addNewSymbols();
+              }
         });
     };
-    
+
 
     
     p.draw = function() {
         p.noFill();
-        p.strokeWeight(3);
+        p.noStroke();
         addSymbols();
+            if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
+                addNewSymbols();
+            }
         checkHover();
     };
     
@@ -229,34 +237,43 @@ const sketch = (p) => {
                 const data = symbolsData[i];
                 p.textSize(data.age); 
                 p.fill(data.color);
-                p.strokeWeight(1);      
-                p.stroke(data.color);
+                p.noStroke();
                 p.text(data.symbol, data.position.x, data.position.y);
             }
 
     }
 
-    // function addNewSymbols() {
-    //     const animationDuration = 1; // Duration of the animation in seconds
-    //     const framesPerSecond = 60; // Number of frames per second
-    //     const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
+    function addNewSymbols() {
+        const animationDuration = 2; // Duration of the animation in seconds
+        const framesPerSecond = 60; // Number of frames per second
+        const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
+
+        const latestSymbolIndex = symbolsData.length - 1; // Index of the newest symbol
+        if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
+            const data = symbolsData[latestSymbolIndex];
+            const targetX = data.position.x; // The final x position
+            const initialX = -300; // Start with x position at -300
+
+            let currentFrame = p.frameCount - startFrame;
+            if (currentFrame <= totalFrames) {
+                // Calculate the interpolated x position based on frameCount
+                const interpolatedX = p.lerp(initialX, targetX, p.min(1, currentFrame / totalFrames));
+                // p.clear();
+                p.textSize(data.age);
+                p.fill(data.color);
+                p.noStroke();
+                p.text(data.symbol, interpolatedX, data.position.y);
+            } else {
+                // Clear the symbol after animation duration
+                startFrame = -1; // Reset startFrame to indicate no ongoing animation
+            }
+        }
+    }
     
-    //     const latestSymbolIndex = symbolsData.length-1; // Index of the newest symbol
-    //     if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
-    //         const data = symbolsData[latestSymbolIndex];
-    //         const targetX = data.position.x; // The final x position
-    //         const initialX = -300; // Start with x position at 0
-    
-    //         // Calculate the interpolated x position based on frameCount
-    //         const interpolatedX = p.lerp(initialX, targetX, p.min(1, p.frameCount / totalFrames));
-    
-    //         p.textSize(data.age); 
-    //         p.fill(data.color);
-    //         p.noStroke();
-    //         p.text(data.symbol, interpolatedX, data.position.y);
-    //     }
-    // }
-    
+        // Call this function when new symbols are added to reset the animation
+    function startNewSymbolAnimation() {
+        startFrame = p.frameCount;
+    }
 
         let hoveredSymbol = null;
 
