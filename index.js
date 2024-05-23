@@ -246,7 +246,7 @@ const sketch = (p) => {
     }
 
     function addNewSymbols() {
-        const animationDuration = 3; // Duration of the animation in seconds
+        const animationDuration = 2; // Duration of the animation in seconds
         const framesPerSecond = 60; // Number of frames per second
         const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
 
@@ -254,7 +254,7 @@ const sketch = (p) => {
         if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
             const data = symbolsData[latestSymbolIndex];
             const targetX = data.position.x; // The final x position
-            const initialX = -220; // Start with x position at -300
+            const initialX = -190; // Start with x position at -300
 
             let currentFrame = p.frameCount - startFrame;
             if (currentFrame <= totalFrames) {
@@ -270,27 +270,6 @@ const sketch = (p) => {
             }
         }
     }
-
-    function addRect(){
-        const animationDuration = 3; // Duration of the animation in seconds
-        const framesPerSecond = 60; // Number of frames per second
-        const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
-        let currentFrame = p.frameCount - startFrame;
-        if (currentFrame <= totalFrames) {
-            p.fill("#FAF7F3");
-            p.rectMode(p.CENTER);
-            rectX = p.width / 2; // Set rectX to the center of the canvas
-            rectY = p.height / 2; // Set rectY to the center of the canvas
-            p.rectMode(p.CENTER);
-            p.rect(rectX, rectY, 610, 730);
-            p.noFill();
-            p.noStroke();
-                
-            } else {
-            // Clear the symbol after animation duration
-            startFrame = -1; // Reset startFrame to indicate no ongoing animation
-        }
-    }
     
         // Call this function when new symbols are added to reset the animation
     function startNewSymbolAnimation() {
@@ -300,29 +279,48 @@ const sketch = (p) => {
         let hoveredSymbol = null;
 
     function checkHover() {
+        let hovered = false; // Track if any symbol is hovered
         for (let i = 0; i < symbolsData.length; i++) {
             const data = symbolsData[i];
             const buffer = 0; // Adjust buffer size as needed
             const distance = p.dist(p.mouseX, p.mouseY, data.position.x, data.position.y);
-            const hoverSize = data.age / 2 + buffer; // Increase hover size with buffer
+            const hoverSize = data.age/2.5 + buffer; // Increase hover size with buffer
             if (distance < hoverSize) {
+                hovered = true; // Set hovered to true if any symbol is hovered
                 hoveredSymbol = data;
                 displaySymbolInfo(hoveredSymbol);
                 return;
             }
         }
-        hoveredSymbol = null;
+        // If no symbol is hovered, clear the displayed information
+        if (!hovered) {
+            hoveredSymbol = null;
+            clearSymbolInfo();
+        }
+    }
+    
+    function clearSymbolInfo() {
+        // Clear the displayed information
+        const infoDiv = document.getElementById('info');
+        infoDiv.innerHTML = `
+        <p class="symbolsize">HOVER OVER THE SYMBOLS TO MEET YOUR FELLOW WEAVERS`;
+        // infoDiv.style.color = '#FFF8EB';
+        // infoDiv.style.border = `1px dotted #FFF8EB`;
+        // infoDiv.style.background = `#EE3333`;
+        infoDiv.style.animation = `blink 2s infinite alternate-reverse ease-in-out`;
     }
     
     
     function displaySymbolInfo(data) {
         // Update the #info div with the corresponding data
         const infoDiv = document.getElementById('info');
+        infoDiv.style.opacity = "1";
         infoDiv.innerHTML = `
             <p class="symbolsize">This weave was added by <br> ${data.name} (${data.selectedText})<br> from ${data.location}</p>
         `;
         infoDiv.style.color = data.color;
         infoDiv.style.border = `1px dotted ${data.color}`;
+        infoDiv.style.animation = 'none';
     }
     
     
