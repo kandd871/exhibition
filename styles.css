@@ -2,8 +2,9 @@
     font-family: "PP Editorial New";
     src:
       local("PP Editorial New"),
-      url("PPEditorialNew-Regular.otf") format("opentype")
-  }
+      url("PPEditorialNew-Regular.otf") format("opentype");
+}
+
 
 body {
     margin: 0;
