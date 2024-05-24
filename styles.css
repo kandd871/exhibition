@@ -5,6 +5,10 @@
       url("PPEditorialNew-Regular.otf") format("opentype");
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 
 body {
     margin: 0;
@@ -288,7 +292,6 @@ canvas {
         margin: 0 auto;
         margin-top: -165px;
         width: 100vw;
-        overflow-x: hidden!important;
     }
     
     #link, #info, .intro, canvas, .box, #p5-container{

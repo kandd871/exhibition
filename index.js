@@ -260,7 +260,10 @@ const sketch = (p) => {
                 if (window.innerWidth < 900) {
                     p5.style.top = "-350px";
                     link.style.top = "300px";
+                    link.style.marginBottom = "0px";
                 }
+
+                window.scrollTo(0, 0);
             }
             
         });
