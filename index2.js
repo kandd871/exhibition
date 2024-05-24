@@ -7,6 +7,7 @@ const infoBox = document.getElementById('info');
 const link = document.getElementById('link');
 const title = document.getElementById('title');
 const a = document.querySelector('a');
+const p5 = document.getElementById('p5-container');
 var logos = document.querySelectorAll('#logo .st0');
 
 button.addEventListener("click", function(){
