@@ -215,8 +215,6 @@ const sketch = (p) => {
         btn = p.select('#add');
         btn.mousePressed(function() {
             const input = document.getElementById('user-data');
-            const info = document.getElementById('i');
-            const about = document.getElementById('about');
             const box = document.querySelector('.box');
             const infoBox = document.getElementById('info');
             const link = document.getElementById('link');
@@ -266,6 +264,18 @@ const sketch = (p) => {
                 }
             }
             
+        });
+        
+        const i = document.getElementById('i');
+
+        i.addEventListener('mouseover', function() {
+            const about = document.getElementById('about');
+            about.classList.add('show');
+        });
+
+        i.addEventListener('mouseout', function() {
+            const about = document.getElementById('about');
+            about.classList.remove('show');
         });
     };
     
