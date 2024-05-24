@@ -285,7 +285,7 @@ canvas {
     body{
         transform: scale(.57);
         margin: 0 auto;
-        margin-top: -175px;
+        margin-top: -150px;
         width: 100vw;
     }
     
@@ -294,7 +294,7 @@ canvas {
     }
     
     .intro{
-        transform: scale(1.85);
+        transform: scale(1.65);
         margin: 0 auto;
         left:0;
         right: 0;
@@ -315,7 +315,7 @@ canvas {
         right:0;
         margin: 0 auto;
         justify-content: center;
-        top: 1100px;
+        top: 1050px;
     }
 
     #link, #info{
@@ -323,18 +323,18 @@ canvas {
         margin:0 auto;
         left:0;
         right:0;
-        transform: scale(1.8);
+        transform: scale(1.7);
     }
 
     canvas{
         top:-30px;
     }
     #info{
-        top: 770px;
+        top: 740px;
     }
 
     #link{
-        top: 1850px;
+        top: 1700px;
         margin-bottom: 900px;
     }
 
