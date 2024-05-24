@@ -258,12 +258,16 @@ const sketch = (p) => {
                 });
 
                 if (window.innerWidth < 900) {
-                    p5.style.top = "-350px";
+                    p5.style.top = "-380px";
                     link.style.top = "300px";
                     link.style.marginBottom = "0px";
                 }
 
-                window.scrollTo(0, 0);
+                window.scrollTo({
+                    top: 100,
+                    left: 100,
+                    behavior: "smooth",
+                  });
             }
             
         });

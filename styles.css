@@ -312,6 +312,7 @@ canvas {
     .box {
         width: 100%;
         top: 0px;
+        transform: scale(.92);
     }
 
     #p5-container{
