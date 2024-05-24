@@ -214,6 +214,12 @@ const sketch = (p) => {
         }
         btn = p.select('#add');
         btn.mousePressed(function() {
+            const symbolElement = document.getElementById('symbol');
+            const symbol = document.getElementById('symbol').value;
+            const color = document.getElementById('color').value;
+            const name = document.getElementById('name').value;
+            const location = document.getElementById('location').value;
+            const age = parseInt(document.getElementById('age').value);
             if (name === '' || color === '' || symbol === '' || age === '' || location === '') {
                 // Display an error message or provide feedback to the user
                 alert('Please fill in all fields before adding.');
@@ -4326,3 +4332,4 @@ const sketch = (p) => {
 // Attach the sketch to a container element
 const containerElement = document.getElementById('p5-container');
 new p5(sketch, containerElement);
+

@@ -13,6 +13,8 @@ body {
     color: #EE3333;
     text-transform: uppercase;
     letter-spacing: .2px;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 button{
@@ -63,6 +65,7 @@ select {
     top: 30px;
     margin-left: 35px;
     width: 320px;
+    z-index: 100;
 }
 
 #menu {
@@ -74,7 +77,6 @@ select {
     text-align: center;
     margin: 0 auto;
     font-size: 15px;
-    z-index: 10;
 }
 
 #user-data{
@@ -131,9 +133,6 @@ select {
     width: 320px;
     margin: 0;
     padding: 0; 
-    /* background-color: #FFF8EB; */
-    /* background-color: #EE3333; */
-    /* color: #FFF8EB; */
     border: 1px dotted #EE3333;
     justify-content: center;
     display: flex;
@@ -185,28 +184,6 @@ select {
 
 }
 
-#p5-container {
-    width: 600px;
-    height: 700px;
-    display: block;
-    position: absolute;
-    /* top:50px;
-    left:422px; */
-}
-
-.box {
-    width: 640px;
-    height: 740px;
-    border: 1px dotted #EE3333;
-    background-color: #FFF8EB;
-    position: absolute;
-    top:27px;
-    left:402px;
-    border-radius: 5px;
-    display: block;
-    /* z-index: 100; */
-}
-
 #link{
     position: absolute;
     text-transform: none;
@@ -231,12 +208,35 @@ a{
 canvas {
     width: 600px;
     height: 700px;
-    display: block;
+    display: flex;
     position: absolute;
     top:-20px;
-    /* left:422px; */
+    margin: 0 auto;
+    justify-content: center;
 }
 
+.box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+#p5-container {
+    width: 640px;
+    height: 740px;
+    border: 1px dotted #EE3333;
+    background-color: #FFF8EB;
+    position: absolute;
+    top:27px;
+    left:402px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    /* z-index: 100; */
+}
 
 @keyframes blink {
     from {
@@ -270,7 +270,6 @@ canvas {
 @media only screen and (max-width: 1400px){
     body{
         transform: scale(.9);
-        margin-top: 0px;
     }
 }
 
@@ -281,16 +280,67 @@ canvas {
     }
 }
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 800px){
     body{
-        transform: scale(.7);
-        margin-top: 0px;
+        transform: scale(.57);
+        margin: 0 auto;
+        margin-top: -175px;
+        width: 100vw;
+    }
+    
+    #link, #info, .intro, canvas, .box, #p5-container{
+        position: relative;
+    }
+    
+    .intro{
+        transform: scale(1.85);
+        margin: 0 auto;
+        left:0;
+        right: 0;
+        top:0;
     }
 
     #title{
-        width: 500px;
-        position: relative;
     }
+
+    .box {
+        width: 100%;
+        top: 0px;
+    }
+
+    #p5-container{
+        display: flex;
+        left:0;
+        right:0;
+        margin: 0 auto;
+        justify-content: center;
+        top: 1100px;
+    }
+
+    #link, #info{
+        display:flex;
+        margin:0 auto;
+        left:0;
+        right:0;
+        transform: scale(1.8);
+    }
+
+    canvas{
+        top:-30px;
+    }
+    #info{
+        top: 770px;
+    }
+
+    #link{
+        top: 1850px;
+        margin-bottom: 900px;
+    }
+
+    .box{
+        top: 600px;
+    }
+    
 }
 
 
