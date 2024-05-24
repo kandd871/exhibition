@@ -258,9 +258,8 @@ const sketch = (p) => {
                 });
 
                 if (window.innerWidth < 900) {
-                    p5.style.top = "-200px";
-                    link.style.top = "400px";
-                    infoBox.style.top = "-500px";
+                    p5.style.top = "-350px";
+                    link.style.top = "300px";
                 }
             }
             

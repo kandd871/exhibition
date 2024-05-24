@@ -15,7 +15,7 @@ body {
     text-transform: uppercase;
     letter-spacing: .2px;
     width: 100vw;
-    overflow-x: hidden;
+    overflow-x: hidden!important;
 }
 
 button{
@@ -253,6 +253,7 @@ canvas {
     body{
         transform: scale(.91);
         margin-top: 0px;
+        width: 100vw;
     }
 
     .intro{
@@ -287,6 +288,7 @@ canvas {
         margin: 0 auto;
         margin-top: -165px;
         width: 100vw;
+        overflow-x: hidden!important;
     }
     
     #link, #info, .intro, canvas, .box, #p5-container{
@@ -315,7 +317,7 @@ canvas {
         right:0;
         margin: 0 auto;
         justify-content: center;
-        top: 1050px;
+        top: 850px;
     }
 
     #link, #info{
@@ -323,19 +325,20 @@ canvas {
         margin:0 auto;
         left:0;
         right:0;
-        transform: scale(1.7);
+        transform: scale(1.8);
     }
 
     canvas{
         top:-30px;
     }
     #info{
-        top: 740px;
+        top: 700px;
+        opacity: 0!important;
     }
 
     #link{
-        top: 1700px;
-        margin-bottom: 900px;
+        top: 1500px;
+        margin-bottom: 820px;
     }
 
     .box{
