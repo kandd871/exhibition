@@ -214,11 +214,18 @@ const sketch = (p) => {
         }
         btn = p.select('#add');
         btn.mousePressed(function() {
-            p.clear();
-            startNewSymbolAnimation();
-            if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
-                addNewSymbols();
-              };
+            if (name === '' || color === '' || symbol === '' || age === '' || location === '') {
+                // Display an error message or provide feedback to the user
+                alert('Please fill in all fields before adding.');
+            } else {
+                // If all fields are filled, proceed with adding the document
+                p.clear();
+                startNewSymbolAnimation();
+                if (startFrame >= 0) { // Only call addNewSymbols if an animation has started
+                    addNewSymbols();
+                };
+            }
+            
         });
     };
     

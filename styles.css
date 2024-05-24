@@ -62,13 +62,13 @@ select {
     text-align: center;
     top: 30px;
     margin-left: 35px;
+    width: 320px;
 }
 
 #menu {
-    width: 320px;
     line-height: 20px;
     /* height: 530px; */
-    position: relative;
+    position: absolute;
     border-radius: 5px;
     padding-top: 0;
     text-align: center;
@@ -128,7 +128,7 @@ select {
 
 #title {
     border-radius: 2px;
-    width: 318px;
+    width: 320px;
     margin: 0;
     padding: 0; 
     /* background-color: #FFF8EB; */
@@ -208,14 +208,14 @@ select {
 }
 
 #link{
-    position: relative;
+    position: absolute;
     text-transform: none;
     /* width: 320px; */
     box-sizing: border-box;
     /* padding: 5px 30px 5px 30px; */
     margin: 0 auto;
-    top: 680px;
-    right: -590px;
+    top: 683px;
+    right: 35px;
     color: #EE3333;
     text-align: center!important;
     vertical-align: center;
@@ -248,56 +248,49 @@ canvas {
 }
 
 
-/* @media only screen and (max-height: 800px){
-    canvas, .box{
+@media only screen and (max-height: 800px){
+    body{
+        transform: scale(.91);
+        margin-top: 0px;
+    }
+
+    .intro{
+        left: -60px;
+    }
+
+    #info{
+        right: -30px;
+    }
+
+    #link{
+        right: -30px;
+    }
+}
+
+@media only screen and (max-width: 1400px){
+    body{
         transform: scale(.9);
-    }
-    canvas, .box, #menu, #info, #logo{
-        margin-top: -5vh;
+        margin-top: 0px;
     }
 }
 
-@media only screen and (max-width: 1200px){
-    canvas, .box, .intro{
-        transform: scale(.8);
-    }
-    canvas, .box {
-        transform: translate(-100px, 0) scale(0.8);
-    }
-    #info{
-        left: 900px;
-        transform: scale(.8);
-    }
-    .intro{
-        position: absolute;
-        top: 40px;
-        left: 30px;
-    }
-    canvas, .box, #menu, #info, #logo{
-        margin-top: -12vh;
+@media only screen and (max-width: 1350px){
+    body{
+        transform: scale(.88);
+        margin-top: 0px;
     }
 }
 
-@media only screen and (max-width: 800px){
-    canvas, .box, .intro{
-        transform: scale(.8);
+@media only screen and (max-width: 500px){
+    body{
+        transform: scale(.7);
+        margin-top: 0px;
     }
 
-    canvas, .box {
-        transform: translate(-100px, 0) scale(0.8);
+    #title{
+        width: 500px;
+        position: relative;
     }
-    #info{
-        left: 880px;
-        transform: scale(.8);
-    }
-    .intro{
-        position: absolute;
-        top: 40px;
-        left: 30px;
-    }
-    canvas, .box, #menu, #info, #logo{
-        margin-top: -2vh!important;
-    }
-} */
+}
 
 
