@@ -243,6 +243,25 @@ canvas {
     /* z-index: 100; */
 }
 
+#addnew{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 100px;
+    left:25%;
+    background: #EE3333;
+    width: 50%;
+    margin: 0 auto;
+    display: none;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+#addnew:hover{
+    background-color:#FFF8EB;
+    color:#EE3333;
+}
+
 @keyframes blink {
     from {
         opacity: 1;

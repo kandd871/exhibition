@@ -221,6 +221,7 @@ const sketch = (p) => {
             const title = document.getElementById('title');
             const a = document.getElementById('arrow');
             const p5 = document.getElementById('p5-container');
+            const addnew = document.getElementById('addnew');
             var logos = document.querySelectorAll('#logo .st0');
 
             const symbol = document.getElementById('symbol').value;
@@ -253,6 +254,8 @@ const sketch = (p) => {
                 a.style.color = "#FFF8EB";
                 title.style.color = "#FFF8EB";
                 title.style.border = "1px dotted #FFF8EB";
+                setTimeout(function()
+                {addnew.style.display = 'flex'; }, 2000);
                 logos.forEach(function(logo) {
                     logo.style.fill = '#FFF8EB'; 
                 });
