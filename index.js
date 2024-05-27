@@ -255,7 +255,7 @@ const sketch = (p) => {
                 title.style.color = "#FFF8EB";
                 title.style.border = "1px dotted #FFF8EB";
                 setTimeout(function()
-                {addnew.style.display = 'flex'; }, 2000);
+                {addnew.style.display = 'flex'; }, 3000);
                 logos.forEach(function(logo) {
                     logo.style.fill = '#FFF8EB'; 
                 });
@@ -313,7 +313,7 @@ const sketch = (p) => {
 
     function addNewSymbols() {
         const animationDuration = 1.5; // Duration of the animation in seconds
-        const framesPerSecond = 50; // Number of frames per second
+        const framesPerSecond = 40; // Number of frames per second
         const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
 
         const latestSymbolIndex = symbolsData.length - 1; // Index of the newest symbol

@@ -254,7 +254,7 @@ canvas {
     margin: 0 auto;
     display: none;
     font-size: 15px;
-    border-radius: 3px;
+    border-radius: 2px;
 }
 
 #addnew:hover{
