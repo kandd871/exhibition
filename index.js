@@ -255,7 +255,7 @@ const sketch = (p) => {
                 title.style.color = "#FFF8EB";
                 title.style.border = "1px dotted #FFF8EB";
                 setTimeout(function()
-                {addnew.style.display = 'flex'; }, 3000);
+                {addnew.style.display = 'flex'; }, 3400);
                 logos.forEach(function(logo) {
                     logo.style.fill = '#FFF8EB'; 
                 });

@@ -91,7 +91,7 @@ select {
     background-color: #EE3333;
     color: #FFF8EB;
     padding-bottom: 40px;
-    transition: 1s;
+    transition: .35s;
     overflow: hidden;
     height: 580px;   
 }
