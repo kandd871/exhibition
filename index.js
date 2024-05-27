@@ -310,7 +310,7 @@ const sketch = (p) => {
 
     function addNewSymbols() {
         const animationDuration = 1.5; // Duration of the animation in seconds
-        const framesPerSecond = 60; // Number of frames per second
+        const framesPerSecond = 50; // Number of frames per second
         const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
 
         const latestSymbolIndex = symbolsData.length - 1; // Index of the newest symbol
