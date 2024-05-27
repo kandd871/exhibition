@@ -317,7 +317,7 @@ const sketch = (p) => {
         if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
             const data = symbolsData[latestSymbolIndex];
             const targetX = data.position.x; // The final x position
-            const initialX = -20;
+            const initialX = -30;
 
             let currentFrame = p.frameCount - startFrame;
             if (currentFrame <= totalFrames) {
