@@ -309,7 +309,7 @@ const sketch = (p) => {
     }
 
     function addNewSymbols() {
-        const animationDuration = 2; // Duration of the animation in seconds
+        const animationDuration = 1.5; // Duration of the animation in seconds
         const framesPerSecond = 60; // Number of frames per second
         const totalFrames = animationDuration * framesPerSecond; // Total number of frames for the animation
 
@@ -317,7 +317,7 @@ const sketch = (p) => {
         if (latestSymbolIndex >= 0) { // Ensure there's at least one symbol in symbolsData
             const data = symbolsData[latestSymbolIndex];
             const targetX = data.position.x; // The final x position
-            const initialX = -130; // Start with x position at -300
+            const initialX = -20;
 
             let currentFrame = p.frameCount - startFrame;
             if (currentFrame <= totalFrames) {
