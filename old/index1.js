@@ -157,7 +157,7 @@ let fontSizes =
 
 ]
 
-let colors = ['#72C8F8', "#EE3333", "#FF8E3D", "#BD48C7", "#0A7F55", "#ABD551", "#6A3F3F"];
+let colors = ['#72C8F8', '#72C8F8', "#AE0000", "#FF8E3D", "#BD48C7", "#0A7F55", "#ABD551", "#72C8F8", "#72C8F8", "#FF8E3D"];
 let symbols = ['+', '×', '≡', '=']
 
 // Define p5 sketch in instance mode
@@ -181,6 +181,7 @@ const sketch = (p) => {
         // add(rectX, rectY);
         addNewSymbols();
         addNewSymbols();
+        addNewSymbols();
 
     };
     
@@ -197,9 +198,9 @@ const sketch = (p) => {
         for (let i = 0; i < fontSizes.length; i++) {
             let color = p.random(colors);
             let symbol = p.random(symbols);
+            p.strokeWeight(.95);  
             p.textSize(fontSizes[i]); 
-            p.fill(color); 
-            p.strokeWeight(1);      
+            p.fill(color);     
             p.stroke(color);
             p.text(symbol, positionsX[i], positionsY[i]);
         }

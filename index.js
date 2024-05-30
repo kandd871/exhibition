@@ -343,27 +343,57 @@ const sketch = (p) => {
     }
 
         let hoveredSymbol = null;
+        let currentScale = 1; // Initial scale factor
 
-    function checkHover() {
-        let hovered = false; // Track if any symbol is hovered
-        for (let i = 0; i < symbolsData.length; i++) {
-            const data = symbolsData[i];
-            const buffer = 0; // Adjust buffer size as needed
-            const distance = p.dist(p.mouseX, p.mouseY, data.position.x, data.position.y);
-            const hoverSize = data.age/2.5 + buffer; // Increase hover size with buffer
-            if (distance < hoverSize) {
-                hovered = true; // Set hovered to true if any symbol is hovered
-                hoveredSymbol = data;
-                displaySymbolInfo(hoveredSymbol);
-                return;
+        function setScale(scale) {
+            currentScale = scale;
+        }
+
+
+        function checkHover() {
+            let hovered = false; // Track if any symbol is hovered
+            let scaledMouseX = p.mouseX / currentScale;
+            let scaledMouseY = p.mouseY / currentScale;
+        
+            for (let i = 0; i < symbolsData.length; i++) {
+                const data = symbolsData[i];
+                const buffer = 0; // Adjust buffer size as needed
+                const distance = p.dist(scaledMouseX, scaledMouseY, data.position.x, data.position.y);
+                const hoverSize = data.age / 2 + buffer; // Increase hover size with buffer
+        
+                if (distance < hoverSize) {
+                    hovered = true; // Set hovered to true if any symbol is hovered
+                    hoveredSymbol = data;
+                    displaySymbolInfo(hoveredSymbol);
+                    return;
+                }
+            }
+        
+            // If no symbol is hovered, clear the displayed information
+            if (!hovered) {
+                hoveredSymbol = null;
+                clearSymbolInfo();
             }
         }
-        // If no symbol is hovered, clear the displayed information
-        if (!hovered) {
-            hoveredSymbol = null;
-            clearSymbolInfo();
+        
+        // Example of setting scale dynamically based on media queries
+        function updateScaleBasedOnMediaQuery() {
+            if (window.matchMedia("(max-height: 800px)").matches) {
+                setScale(0.91); // Example scale factor for small screens
+            } else if (window.matchMedia("(max-width: 1400px)").matches) {
+                setScale(0.9); // Example scale factor for medium screens
+            } else if (window.matchMedia("(max-width: 1350px)").matches) {
+                setScale(0.88); // Example scale factor for medium screens
+            } else if (window.matchMedia("(max-width: 800px)").matches) {
+                setScale(0.57); // Example scale factor for medium screens
+            } else {
+                setScale(1); // Default scale factor for large screens
+            }
         }
-    }
+        
+        // Call updateScaleBasedOnMediaQuery on load and on resize
+        window.addEventListener('resize', updateScaleBasedOnMediaQuery);
+        window.addEventListener('load', updateScaleBasedOnMediaQuery);
     
     function clearSymbolInfo() {
         // Clear the displayed information
